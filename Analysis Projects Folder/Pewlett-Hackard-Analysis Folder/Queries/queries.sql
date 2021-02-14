@@ -116,7 +116,7 @@ FROM departments
 INNER JOIN dept_manager
 ON departments.dept_no = dept_manager.dept_no;
 
--- Joining retirement_info and dept_emp tables
+-- Joining retirement_info and dept_emp tables 
 SELECT retirement_info.emp_no,
     retirement_info.first_name,
 retirement_info.last_name,
@@ -124,6 +124,7 @@ retirement_info.last_name,
 FROM retirement_info
 LEFT JOIN dept_emp
 ON retirement_info.emp_no = dept_emp.emp_no;
+
 
 SELECT ri.emp_no,
     ri.first_name,
@@ -168,7 +169,7 @@ LEFT JOIN dept_emp as de
 ON ce.emp_no = de.emp_no
 GROUP BY de.dept_no;
 
--- Employee count by department number
+-- Employee count by department number 
 SELECT COUNT(ce.emp_no), de.dept_no
 FROM current_emp as ce
 LEFT JOIN dept_emp as de
@@ -181,22 +182,7 @@ SELECT * FROM salaries;
 SELECT * FROM salaries
 ORDER BY to_date DESC;
 
-SELECT emp_no, first_name, last_name
-INTO retirement_info
-FROM employees
-WHERE (birth_date BETWEEN '1952-01-01' AND '1955-12-31')
-AND (hire_date BETWEEN '1985-01-01' AND '1988-12-31');
-
-SELECT emp_no,
-    first_name,
-last_name,
-    gender
-	
-INTO emp_info
-FROM employees
-WHERE (birth_date BETWEEN '1952-01-01' AND '1955-12-31')
-AND (hire_date BETWEEN '1985-01-01' AND '1988-12-31');
-
+--!!!!!!!!
 SELECT e.emp_no,
     e.first_name,
 e.last_name,
@@ -233,12 +219,81 @@ FROM dept_manager AS dm
 -- INTO dept_info
 SELECT ce.emp_no,
 ce.first_name,
-ce.last_name,
+ce.last_name
 FROM current_emp as ce
 INNER JOIN dept_emp AS de
 ON (ce.emp_no = de.emp_no)
 INNER JOIN departments AS d
 ON (de.dept_no = d.dept_no);
+
+--!SELECT create a table
+
 d.dept_name
-		
-	
+INTO dept_info
+FROM current_emp as ce
+INNER JOIN dept_emp AS de
+ON (ce.emp_no = de.emp_no)
+INNER JOIN departments AS d
+ON (de.dept_no = d.dept_no);
+
+SELECT * FROM dept_info;
+SELECT * FROM emp_by_dept;
+SELECT * FROM retirement_info;
+SELECT * FROM departments;
+SELECT * FROM dept_emp;
+SELECT * FROM current_emp;
+
+-- Sales team retirement info
+SELECT emp_no, dept_no
+FROM dept_emp 
+WHERE dept_emp.dept_no = ('d007');
+
+SELECT emp_no, dept_no
+INTO sales_dept
+FROM dept_emp
+WHERE (dept_no = 'd007');
+
+SELECT * FROM sales_dept;
+
+DROP TABLE sales_retirement;
+
+SELECT 	sd.emp_no, 
+		sd.dept_no,
+		ri.first_name,
+		ri.last_name
+INTO sales_retirement
+FROM sales_dept AS sd
+INNER JOIN retirement_info AS ri
+ON(sd.emp_no = ri.emp_no);
+
+SELECT * FROM sales_retirement;
+
+SELECT * 
+FROM sales_dept
+INNER JOIN retirement_info 
+ON sales_dept.emp_no=retirement_info.emp_no;
+
+SELECT emp_no, dept_no
+FROM dept_emp 
+WHERE dept_emp.dept_no = ('d005');
+
+SELECT emp_no, dept_no
+INTO dev_sales_dept
+FROM dept_emp
+WHERE (dept_no = 'd005')
+OR (dept_no = 'd007');
+
+SELECT * FROM dev_sales_dept;
+DROP TABLE dev_sales_retirement;
+
+SELECT 	ds.emp_no, 
+		ds.dept_no,
+		ri.first_name,
+		ri.last_name
+INTO dev_sales_retirement
+FROM dev_sales_dept AS ds
+INNER JOIN retirement_info AS ri
+ON(ds.emp_no = ri.emp_no);
+
+SELECT * FROM dev_sales_retirement;
+DROP TABLE dev_sales_retirement;
