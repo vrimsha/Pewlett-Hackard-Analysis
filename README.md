@@ -4,14 +4,14 @@
 
 Determine the number of retiring employees per title, and identify employees who are eligible to participate in a mentorship program.
 
-Deliverable 1: The Number of Retiring Employees by Title
-Deliverable 2: The Employees Eligible for the Mentorship Program
+<br>Deliverable 1: The Number of Retiring Employees by Title</br>
+<br>Deliverable 2: The Employees Eligible for the Mentorship Program</br>
 
 ## Results: 
 
 1. Created a Retirement Titles table that holds all the titles of current employees who were born between January 1, 1952 and December 31, 1955. 
 
-!(Retirement_Titles)[Retirement_Titles.png]
+!(Retirement_Titles.png)[Retirement_Titles]
 
 Some employees have multiple titles in the database due to promotions in the past.
 
