@@ -17,24 +17,24 @@ Some employees have multiple titles in the database due to promotions in the pas
 
 2. Created a Unique Titles table that contains the most recent title of each employee. 
 
-!(unique_titles)[unique_titles.png]
+![unique_titles](unique_titles.png)
 
 3. Created a Retiring Titles table to hold the required information.
 
-!(retiring_titles)[retiring_titles.png]
+![retiring_titles](retiring_titles.png)
 
 4. Created a Mentorship Eligibility table that holds the employees who are eligible to participate in a mentorship program.
 
-!(mentorship_eligibility)[mentorship_eligibility.png]
+![mentorship_eligibility](mentorship_eligibility.png)
 
 ## Summary: 
 
 133776 roles will need to be filled as the "silver tsunami".
 
-!(Silver_tsunami)[Silver_tsunami.png]
+![Silver_tsunami](Silver_tsunami.png)
 
 Are there enough qualified, retirement-ready employees in the departments to mentor the next generation of Pewlett Hackard employees? 
 
 Yes, there are enough qualified members: 1549
 
-!(mentorship_eligibility_count)[mentorship_eligibility_count.png] 
+![mentorship_eligibility_count](mentorship_eligibility_count.png)
