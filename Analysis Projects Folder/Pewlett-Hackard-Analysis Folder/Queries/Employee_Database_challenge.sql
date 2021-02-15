@@ -53,3 +53,12 @@ WHERE e.birth_date BETWEEN '1965-01-01' AND '1965-12-31'
 AND de.to_date = '9999-01-01'
 AND t.to_date = '9999-01-01'
 ORDER BY e.emp_no;
+
+--"silver tsunami"
+SELECT COUNT (emp_no)
+FROM unique_titles;
+
+SELECT COUNT (emp_no), mentorship_eligibility.title
+FROM mentorship_eligibility
+GROUP BY title
+ORDER BY COUNT (emp_no) DESC;
