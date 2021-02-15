@@ -11,7 +11,7 @@ Determine the number of retiring employees per title, and identify employees who
 
 1. Created a Retirement Titles table that holds all the titles of current employees who were born between January 1, 1952 and December 31, 1955. 
 
-![Retirement_title_copy] (Retirement_title_copy.png)
+![Retirement_title_copy](Retirement_title_copy.png)
 
 Some employees have multiple titles in the database due to promotions in the past.
 
